@@ -1,0 +1,20 @@
+# My solution
+n, k = map(int,input().split())
+ans = 0
+
+while n != 1:
+    if n % k == 0:
+        n //= k
+    else:
+        n -= 1
+    ans += 1
+
+print(ans)
+
+#############################
+# Good 1
+# 위의 방법은 n이 k로 나누어떨어지는 수가 될 때까지 반복해서 1씩만 뺌
+# 하지만 n이 k의 배수가 되도록 한 번에 빼면 계산 시간을 훨씬 줄일 수 있음.
+
+n, k = map(int,input().split())
+ans = 0

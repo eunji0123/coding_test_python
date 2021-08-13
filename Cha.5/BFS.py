@@ -29,3 +29,5 @@ visited = [False] * 9
 
 
 bfs(graph, 1, visited)
+
+# Answer: 1 2 3 8 7 4 5 6

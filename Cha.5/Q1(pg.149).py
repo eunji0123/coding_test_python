@@ -75,6 +75,41 @@ print(count)
 
 ####################################################
 
+# Good - Using DFS
+
+n, m = map(int, input().split())
+maps = []
+for _ in range(n):
+    maps.append(list(map(int,input())))
+
+def dfs(x, y):
+    '''
+    처음 if 2개는 조건에 맞지 않을 경우 return False로 함수를 끝내버리기 위함
+    '''
+    if x < 0 or x >= n or y < 0 or y >= m:
+        return False
+    if maps[x][y] == 1:
+        return False
+    if maps[x][y] == 0:
+        maps[x][y] = 1
+        # 조건을 만족하면 dfs()를 호출해가 아니고
+        # 일단 dfs()를 호출하고 조건에 맞지 않으면 return False로 끝내버려의 느낌
+        dfs(x-1, y)
+        dfs(x+1, y)
+        dfs(x, y-1)
+        dfs(x, y+1)
+
+total = 0
+for p in range(n):
+    for q in range(m):
+        if maps[p][q] == 0:
+            dfs(p, q)
+            total += 1
+
+print(total)
+
+####################################################
+
 # test input
 '''
 15 14

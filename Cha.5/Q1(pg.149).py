@@ -6,6 +6,11 @@ dy = [0, 1, 0, -1]
 count = 0
 
 def bfs(start, n, m):
+    '''
+    여기서 함수의 매개변수로 n, m은 사실 포함할 필요 없음.
+    전역변수의 값을 바꿀 필요가 있다면 이렇게 매개변수에 포함하거나 global n, m을 선언하여 불러와야하지만
+    이 bfs() 함수 안에선 단순히 크기비교를 위해 n, m을 사용하므로 그럴 필요 X
+    '''
     queue = deque([start])
     #visited[start[0]][start[1]] = True
     graph[start[0]][start[1]] = 1

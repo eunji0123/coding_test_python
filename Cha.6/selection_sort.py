@@ -2,7 +2,7 @@
 
 array = [4, 0, 8, 2, 6, 1, 3, 9, 7, 5]
 
-for i in range(len(array)):
+for i in range(len(array)): # n=10일 때 앞에 9번 정렬하면 제일 큰 원소는 알아서 정렬되므로 len(array)-1 해도 ok
     min_index = i
     # 첫 번째 원소는 뒤의 9개 원소와 크기 비교
     # 두 번째 원소는 뒤의 8개 원소와 크기 비교
